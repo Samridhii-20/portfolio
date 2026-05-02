@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { Satellite } from 'lucide-react'
 
 // Animated starfield canvas component with parallax
 function StarField() {
@@ -41,7 +42,7 @@ function StarField() {
       animId = requestAnimationFrame(draw)
     }
     draw()
-    return () => { 
+    return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', resize)
       window.removeEventListener('mousemove', handleMouseMove)
@@ -200,9 +201,11 @@ export default function Page() {
             <div className="aurora-gradient"></div>
           </div>
 
-          <div className="floating-shape shape-1"></div>
-          <div className="floating-shape shape-2"></div>
-          <div className="floating-shape shape-3"></div>
+          <Satellite className="floating-shape shape-1" size={180} strokeWidth={1} />
+          <Satellite className="floating-shape shape-2" size={120} strokeWidth={1} />
+          <Satellite className="floating-shape shape-3" size={150} strokeWidth={1} />
+          <Satellite className="floating-shape shape-4" size={200} strokeWidth={1} />
+
 
           <div className="space-y-8 relative z-20 animate-fade-in-up">
             <p className="font-label-caps text-violet-400 tracking-[0.4em] uppercase text-sm mb-4">Computer Science Student & Developer</p>
@@ -243,15 +246,15 @@ export default function Page() {
           <div className="w-full md:w-1/2 space-y-6">
             <h2 className="font-h2 text-h2 text-white">Professional <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Summary</span></h2>
             <p className="text-lg text-slate-400 leading-relaxed">
-              B.Tech Computer Science student specializing in Data Science, with strong hands-on experience in full-stack web development and backend engineering. Proficient in building scalable web applications, designing RESTful APIs, and managing databases with clean, efficient code. Equipped with a solid foundation in data structures, algorithms, and system design, and driven by a passion for solving real-world problems and developing reliable, high-impact software in collaborative environments.            </p>
+              B.Tech Computer Science student specializing in Data Science, with a strong foundation in data structures, algorithms, and system design, and a primary focus on software development. Skilled in designing efficient, scalable systems and writing clean, maintainable code to solve complex real-world problems. Experienced in backend engineering, RESTful API design, and database management, with additional hands-on exposure to full-stack web development. Passionate about building reliable, high-impact software and continuously improving problem-solving and engineering skills in collaborative environments.</p>
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="glass-card p-5 rounded-xl text-center">
                 <div className="text-violet-400 font-h3 text-3xl font-bold">2027</div>
                 <div className="font-label-caps text-slate-500 text-[10px] mt-1">Bennett University</div>
               </div>
               <div className="glass-card p-5 rounded-xl text-center">
-                <div className="text-fuchsia-400 font-h3 text-3xl font-bold">4+</div>
-                <div className="font-label-caps text-slate-500 text-[10px] mt-1">Major Projects</div>
+                <div className="text-fuchsia-400 font-h3 text-3xl font-bold">10+</div>
+                <div className="font-label-caps text-slate-500 text-[10px] mt-1">Projects</div>
               </div>
             </div>
           </div>
@@ -263,16 +266,6 @@ export default function Page() {
             <h2 className="font-h2 text-h2 text-white">Technical <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Skills</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {/* Data Science */}
-            <div className="glass-card p-6 rounded-xl glow-border hover:-translate-y-1 transition-all duration-300">
-              <span className="material-symbols-outlined text-fuchsia-400 text-3xl mb-3">query_stats</span>
-              <h3 className="font-['Space_Grotesk'] text-lg font-semibold text-white mb-2">Data Science</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">Pandas, NumPy, Matplotlib, Scikit-learn, Machine Learning</p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                <span className="px-2.5 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400 text-[10px] font-label-caps">Analytics</span>
-                <span className="px-2.5 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400 text-[10px] font-label-caps">Modeling</span>
-              </div>
-            </div>
             {/* Languages */}
             <div className="glass-card p-6 rounded-xl glow-border hover:-translate-y-1 transition-all duration-300">
               <span className="material-symbols-outlined text-blue-400 text-3xl mb-3">code_blocks</span>
@@ -291,6 +284,16 @@ export default function Page() {
               <div className="mt-4 flex flex-wrap gap-1.5">
                 <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-label-caps">Architecture</span>
                 <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-label-caps">Logic</span>
+              </div>
+            </div>
+            {/* Data Science */}
+            <div className="glass-card p-6 rounded-xl glow-border hover:-translate-y-1 transition-all duration-300">
+              <span className="material-symbols-outlined text-fuchsia-400 text-3xl mb-3">query_stats</span>
+              <h3 className="font-['Space_Grotesk'] text-lg font-semibold text-white mb-2">Data Science</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">Pandas, NumPy, Matplotlib, Scikit-learn, Machine Learning</p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                <span className="px-2.5 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400 text-[10px] font-label-caps">Analytics</span>
+                <span className="px-2.5 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400 text-[10px] font-label-caps">Modeling</span>
               </div>
             </div>
             {/* Tools */}
@@ -383,7 +386,7 @@ export default function Page() {
                 <span className="font-label-caps text-fuchsia-400 text-xs tracking-widest">Core Strengths</span>
                 <h3 className="font-['Space_Grotesk'] text-xl font-bold text-white mt-1">Soft Skills</h3>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {['Communication', 'Problem-Solving', 'Analytical Thinking', 'Teamwork', 'Adaptability', 'Time Management'].map(s => (
+                  {['Effective Communication', 'Problem-Solving', 'Analytical Thinking', 'Teamwork', 'Adaptability', 'Time Management'].map(s => (
                     <span key={s} className="bg-slate-800/60 border border-slate-700/50 px-4 py-2 rounded-full text-sm text-slate-300">{s}</span>
                   ))}
                 </div>
@@ -438,7 +441,7 @@ export default function Page() {
       {/* Footer */}
       <footer className="w-full py-12 mt-20 bg-[#030712]/90 backdrop-blur-md border-t border-violet-500/10 font-['Space_Grotesk'] text-sm uppercase tracking-widest relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center px-10 gap-6 max-w-7xl mx-auto">
-          <div className="text-slate-600">© 2025 Samridhi Choudhary</div>
+          <div className="text-slate-600">© 2026 Samridhi Choudhary</div>
           <div className="flex gap-8">
             <a className="text-slate-600 hover:text-violet-400 transition-all" href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
             <a className="text-slate-600 hover:text-violet-400 transition-all" href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
